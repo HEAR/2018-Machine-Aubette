@@ -1,0 +1,22 @@
+{
+  "name": "machine-aubette",
+  "version": "1.0.0",
+  "description": "Projet de création d'affiche en direct pour la soirée de l'Aubette.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HEAR/2018-Machine-Aubette.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HEAR/2018-Machine-Aubette/issues"
+  },
+  "homepage": "https://github.com/HEAR/2018-Machine-Aubette#readme",
+  "dependencies": {
+    "puppeteer": "^1.10.0"
+  }
+}
