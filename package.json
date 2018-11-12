@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HEAR/2018-Machine-Aubette#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "puppeteer": "^1.10.0"
   }
 }
