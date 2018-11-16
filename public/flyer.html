@@ -4,35 +4,147 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0">
-		<title>Machine Aubette</title>
-		<link rel="stylesheet" href="roboto/Roboto-Bold.woff">
-		<link rel="stylesheet" href="arvo/stylesheet.css">
-		<link rel="stylesheet" href="vandoesburg/stylesheet.css">
-		<link rel="stylesheet" href="stylesheetprincipal.css">
+		<title>Machine Aubette Flyer</title>
+		<link rel="stylesheet" href="fonts/roboto/stylesheet.css">
+		<link rel="stylesheet" href="fonts/vandoesburg/stylesheet.css">
+		<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 	<div id="fond">
 
-		<div id="texte1">Lorem 1 ipsum dolor sit amet, consectetur adipisicing elit. Eaque iure tenetur eveniet omnis officiis libero officia modi voluptatum nisi dignissimos. Neque, pariatur ab. Deserunt, incidunt cumque ex ut soluta aut.
-		</div>
+		<img src="" id="img1">  
+		<img src="" id="img2">
 
-		<div id="texte2">Lorem 2 ipsum
-		</div>
+		<div id="texte1"></div>
+		<div id="texte2"></div>
+		<div id="texte3"></div>
 
-		<img src="img/300x300px_1.png" id="img1"> 
-
-
-		<div id="texte3">Lorem 3 ipsum dolor sit amet, consectetur adipisicing elit. Eaque iure tenetur eveniet omnis officiis libero officia modi voluptatum nisi dignissimos. Neque, pariatur ab. Deserunt, incidunt cumque ex ut soluta aut.
-		</div>
-
-		<img src="img/soiree350.png" id="img2">
 			
-		<div class="heure">23<span>:</span>49</div>
+		<div id="heure">
+			<span id="hh"></span><span class="sep">:</span><span id="mm"></span><span class="sep">:</span><span id="ss"></span>
+		</div>
 
 	</div>
 
-	
+
+
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+
+			console.log("MACHINE AUBETTE READY");
+
+			var params = getSearchParamaters();
+
+			$("#texte1").text( decodeURIComponent(params.texte1 ) );
+			$("#texte2").text( decodeURIComponent(params.texte2 ) );
+			$("#texte3").text( decodeURIComponent(params.texte3 ) );
+
+			$("#img1").attr("src", "images/"+params.image1 );
+			$("#img2").attr("src", "images/"+params.image2 );
+
+			placementImage("#img1");
+			placementImage("#img2");
+
+
+			placementTexte("#texte1", 0.5, 39);
+			placementTexte("#texte2", 0.5, 10);
+			placementTexte("#texte3", 0.5, 5);
+
+
+			var horaire = new Date();
+
+			console.log( horaire.getHours() + ":" + horaire.getMinutes() + ":" + horaire.getSeconds());
+
+
+			$("#hh").text( ("00" + horaire.getHours() ).substr(-2)  );
+			$("#mm").text( ("00" + horaire.getMinutes() ).substr(-2) );
+			$("#ss").text( ("00" + horaire.getSeconds() ).substr(-2) );
+
+
+			placementHoraire();
+
+		})
+
+
+		function getSearchParamaters(){
+			var prmstr = window.location.search.substr(1);
+			return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+		}
+
+		function transformToAssocArray(prmstr){
+			var params = {};
+			var prmarr = prmstr.split("&");
+			for( var i = 0; i < prmarr.length; i++){
+				var tmparr = prmarr[i].split("=");
+				params[ tmparr[0] ] = tmparr[1];
+			}
+
+			return params;
+		}
+
+
+		function placementImage(id){
+
+			var largeur = Math.round( Math.random() * (21-7) ) + 7;
+			var angle 	= Math.floor( Math.random() * 4 ) * 90 + 45;
+			var posX  	= Math.round( Math.random() * 18) + 1;
+			var posY	= Math.round( Math.random() * 18) + 1;
+
+			$(id)
+			.width(largeur + "cm")
+			.height(largeur + "cm")
+			.css("transform", "rotate("+angle+"deg)")
+			.css("top", posX + "cm")
+			.css("left", posY + "cm");
+
+		}
+
+		function placementTexte(id, min, max){
+
+			var largeur = Math.round( Math.random() * (21-7) ) + 7;
+			var angle 	= Math.floor( Math.random() * 4 ) * 90 + 45;
+			var posX  	= Math.round( Math.random() * 18) + 1;
+			var posY	= Math.round( Math.random() * 18) + 1;
+
+			var fontSize = Math.round( Math.random() * max )/2 + min;
+
+			console.log(fontSize);
+			// var lineHeight = 
+
+			$(id)
+			.width(largeur + "cm")
+			.css("transform", "rotate("+angle+"deg)")
+			.css("top", posX + "cm")
+			.css("left", posY + "cm")
+			.css("font-size", fontSize + "rem");
+
+		}
+
+
+		function placementHoraire(){
+			var fontSize = Math.round( Math.random() * 6 )/2 +3;
+			var posX  	 = Math.round( Math.random() * (20 - fontSize) ) + fontSize;
+
+
+			$("#heure")
+			.css("left", posX + "cm")
+			.css("font-size", fontSize + "rem");
+
+			var largeur = $("#heure").outerWidth(true);
+
+			var posY = Math.round( Math.random() * ( $("#fond").height() - largeur) );
+
+			console.log(largeur);
+
+			$("#heure").css("top", posY);
+		}
+
+
+	</script>
 
  
  </body>

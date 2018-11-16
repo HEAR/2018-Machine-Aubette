@@ -51,7 +51,7 @@ function tramerImage(){
 
 	console.log(filein+ "\n\t -> "+fileout)
 
-	im.convert([filein, "-resize", "200x200", "-colorspace", "Gray", "-ordered-dither", "o3x3",  fileout],
+	im.convert([filein, "-resize", "200x200", "-colorspace", "Gray", "-ordered-dither", "o3x3", "-transparent", "white",  fileout],
 	function(err, stdout) {
 		if (err) throw err
 		// console.log('stdout:', stdout)
@@ -60,16 +60,21 @@ function tramerImage(){
 	var phrases = JSON.parse( fs.readFileSync("./texte.json") )
 
 	// var phrases = require("./texte.json")
-	var la_phrase = phrases[ Math.floor( phrases.length * Math.random() ) ] ;
+	var la_phrase1 = phrases[ Math.floor( phrases.length * Math.random() ) ] ;
+	var la_phrase2 = phrases[ Math.floor( phrases.length * Math.random() ) ] ;
+	var la_phrase3 = phrases[ Math.floor( phrases.length * Math.random() ) ] ;
 
 
+	var flyerURL = 'http://localhost:3000/flyer.html?texte1='+ la_phrase1 + '&texte2='+ la_phrase2 + '&texte3='+ la_phrase3 + '&image1=' + "image-" + filesOutNum + ".png" + '&image2=' + "image-" + filesOutNum + ".png";
+
+	console.log(flyerURL)
 
 	puppeteer.launch().then(browser => {
 		browser.newPage()
 		.then(page => {
-			page.goto('http://localhost:3000?texte='+ la_phrase + "&image=" + "image-" + filesOutNum + ".jpg", {waitUntil: 'networkidle2'})
+			page.goto(flyerURL, {waitUntil: 'networkidle2'})
 			// .then(resp => page.screenshot({path: 'example.png'}))
-			.then(resp => page.pdf({path: pdfOut+'flyer-'+filesPDFOutNum+'.pdf', width:"21cm", height:"21cm", printBackground: true}))
+			.then(resp => page.pdf({path: pdfOut+'flyer-'+filesPDFOutNum+'.pdf', width:"20cm", height:"20cm", printBackground: true, preferCSSPageSize:true}))
 			.then(buffer => browser.close());
 		});
 	});

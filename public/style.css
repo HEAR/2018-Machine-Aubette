@@ -10,7 +10,7 @@ html{
 }
 
 body{
-	background: repeating-linear-gradient(
+	/*background: repeating-linear-gradient(
 		rgba(0, 0, 255, 0),
 		rgba(0, 0, 255, 0) 0.9cm,
 		rgba(0, 0, 255, 0.5) 1cm,
@@ -23,13 +23,13 @@ body{
 		rgba(255, 0, 0, 0.5) 1cm
 	);
 
-	background-size: 1cm 1cm;
+	background-size: 1cm 1cm;*/
 
 	margin: 0;
 }
 
 #fond{
-	background: rgba(0,255,0, 0.2);
+	/*background: rgba(0,255,0, 0.2);*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -38,18 +38,19 @@ body{
 	overflow: hidden;
 }
 
-.heure {
+#heure {
 	position: absolute;
 	top:1cm;
 	left:6cm;
 	font-family: 'TheoVanDoesburg';
 	transform: rotate(90deg); 
 	transform-origin: top left; 
-	font-size: 7rem;
+	font-size: 6rem;
+	letter-spacing: 0.1em;
 
 }
 
-.heure span{
+#heure span.sep{
 	font-family: "arial";
 	font-size: 1.55em;
 }
@@ -62,7 +63,7 @@ body{
 	font-weight: bold;
 	width: 5cm;
 	font-size: 0.4rem;
-	line-height: 0.8rem;
+	line-height: 1.15em;
 	transform: rotate(45deg);
 	transform-origin: top left;
 } 
@@ -75,7 +76,7 @@ body{
 	font-weight: bold;		
 	width: 5cm;
 	font-size: 20rem;
-	line-height: 21rem;
+	line-height: 1.15em;
 	transform: rotate(45deg); 
 	transform-origin: top left;
 }
@@ -88,7 +89,7 @@ body{
 	font-weight: bold;
 	width: 10cm;
 	font-size: 2rem;
-	line-height: 2rem;
+	line-height: 1.15em;
 	transform: rotate(45deg);
 	transform-origin: top left;
 } 

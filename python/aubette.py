@@ -14,7 +14,7 @@ from threading import Timer
 
 
 def instaScrap():
-	url = 'https://www.instagram.com/explore/tags/test/'
+	url = 'https://www.instagram.com/explore/tags/lanuitdelaubette/'
 
 	screenW = 1280
 	screenH = 800
