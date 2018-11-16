@@ -15,10 +15,24 @@ from threading import Timer
 
 def instaScrap():
 	url = 'https://www.instagram.com/explore/tags/test/'
+
+	screenW = 1280
+	screenH = 800
+
 	driver = webdriver.Firefox()
+	driver.set_window_size(screenW/2, screenH/2)
+	driver.set_window_position(screenW/4, screenH/4)
 	driver.get(url)
 
 	soup = BeautifulSoup(driver.page_source,features="html.parser")
+
+
+	print(" ___  ___ _ __ __ _ _ __  ")
+	print("/ __|/ __| '__/ _` | '_ \ ")
+	print("\__ \ (__| | | (_| | |_) |")
+	print("|___/\___|_|  \__,_| .__/ ")
+	print("                   | |    ")
+	print("                   |_|    ")
 
 
 	num = 0
