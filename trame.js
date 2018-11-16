@@ -46,7 +46,7 @@ function tramerImage(){
 
 
 	var filein  = folderIn + image_a_tramer
-	var fileout = folderOut + "image-" + filesOutNum + ".jpg" 
+	var fileout = folderOut + "image-" + filesOutNum + ".png" 
 
 
 	console.log(filein+ "\n\t -> "+fileout)
