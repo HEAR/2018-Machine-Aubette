@@ -1,0 +1,117 @@
+@page {
+  margin: 0cm;
+  width: 20cm;
+  height: 20cm;
+}
+
+
+html{
+	font-size:0.5cm;
+}
+
+body{
+	background: repeating-linear-gradient(
+		rgba(0, 0, 255, 0),
+		rgba(0, 0, 255, 0) 0.9cm,
+		rgba(0, 0, 255, 0.5) 1cm,
+		rgba(0, 0, 255, 0.5) 1cm
+	),repeating-linear-gradient(
+		90deg,
+		rgba(255, 0, 0, 0),
+		rgba(255, 0, 0, 0) 0.9cm,
+		rgba(255, 0, 0, 0.5) 1cm,
+		rgba(255, 0, 0, 0.5) 1cm
+	);
+
+	background-size: 1cm 1cm;
+
+	margin: 0;
+}
+
+#fond{
+	background: rgba(0,255,0, 0.2);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 21cm;
+	height: 21cm;
+	overflow: hidden;
+}
+
+.heure {
+	position: absolute;
+	top:1cm;
+	left:6cm;
+	font-family: 'TheoVanDoesburg';
+	transform: rotate(90deg); 
+	transform-origin: top left; 
+	font-size: 7rem;
+
+}
+
+.heure span{
+	font-family: "arial";
+	font-size: 1.55em;
+}
+
+#texte1{
+	position: absolute;
+	top:1cm;
+	left: 5cm;
+	font-family: 'Roboto';
+	font-weight: bold;
+	width: 5cm;
+	font-size: 0.4rem;
+	line-height: 0.8rem;
+	transform: rotate(45deg);
+	transform-origin: top left;
+} 
+
+#texte2{
+	position: absolute;
+	top:4cm;
+	left: 16cm;
+	font-family: 'Roboto';
+	font-weight: bold;		
+	width: 5cm;
+	font-size: 20rem;
+	line-height: 21rem;
+	transform: rotate(45deg); 
+	transform-origin: top left;
+}
+
+#texte3{
+	position: absolute;
+	top:2cm;
+	left: 10cm;
+	font-family: 'Roboto';
+	font-weight: bold;
+	width: 10cm;
+	font-size: 2rem;
+	line-height: 2rem;
+	transform: rotate(45deg);
+	transform-origin: top left;
+} 
+
+#img1{
+	position: absolute;
+	top: 9.5cm;
+	left: 10cm;
+	transform: rotate(-45deg);
+	transform-origin: top left;
+	width: 14.85cm;
+	height: 14.85cm;
+}
+
+#img2{
+	position:absolute;
+	top : 5cm;
+	left : 5cm;
+	width:50px;
+	height:auto;
+	transform: rotate(45deg);
+	transform-origin: top left ; 
+	width: 14.85cm; 
+	height: 14.85cm; 
+
+}

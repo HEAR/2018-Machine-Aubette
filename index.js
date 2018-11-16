@@ -17,8 +17,8 @@ app.listen(port, function(){
 	(async () => {
 		const browser = await puppeteer.launch();
 		const page = await browser.newPage();
-		await page.goto('http://localhost:3000', {waitUntil: 'networkidle2'});
-		await page.pdf({path: 'pdf/test.pdf', format: 'A4', printBackground: true});
+		await page.goto('http://localhost:3000/flyer.html', {waitUntil: 'networkidle2'});
+		await page.pdf({path: 'pdf/test.pdf', width: '20cm', height: '20cm', printBackground: true, preferCSSPageSize:true});
 		await browser.close();
 	})();
 
