@@ -27,18 +27,16 @@ def instaScrap():
 		url = x['src']
 		# print(url)
 
-		page = requests.get(url)
-		f_ext = os.path.splitext(url)[-1]
-		# f_name = "img{}".format(f_ext)
-		# f_name = str(num).format(f_ext)
-		f_name = os.path.basename(url)
+		image 	= requests.get(url)
+		f_ext 	= os.path.splitext(url)[-1]
+		f_name 	= os.path.basename(url)
 
 		print(str(num) + " -> " + f_name)
 
 		num += 1
 
 		with open('images/'+f_name, 'wb') as f:
-			f.write(page.content)
+			f.write(image.content)
 
 	driver.close()
 
