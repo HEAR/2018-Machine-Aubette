@@ -13,11 +13,13 @@ Puis d'installer les éléments suivants à l'aide de ces commandes (sur PC alle
 
 - `brew install imagemagick` / [https://www.imagemagick.org/script/index.php](https://www.imagemagick.org/script/index.php)
 - `brew install node` / [https://nodejs.org](https://nodejs.org)
+- `brew install geckodriver` / [https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases	)
 
 Il faut également installer python 3 en allant le télécharger sur [https://python.org](https://python.org), puis installer les modules nécessaires à l'aide des commandes suivantes
 
 - `pip3 install BeautifulSoup4`
 - `pip3 install selenium`
+- `pip3 install requests`
 
 Vous pouvez ensuite clonner ce répertoire et installer les éléments nécessaires en lançant la commande suivante :
 
