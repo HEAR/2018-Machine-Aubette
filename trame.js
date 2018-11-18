@@ -51,6 +51,11 @@ function tramerImage(){
 
 	console.log(filein+ "\n\t -> "+fileout)
 
+	// http://www.imagemagick.org/discourse-server/viewtopic.php?t=21677
+	// convert gris.png -colorspace Gray -negate -alpha copy mask.png
+	// convert gris.png -colorspace Gray -fill black  mask.png -compose Copy_Opacity -composite gris-alpha.png
+	// convert -define png:size=600x600 vertical.png -thumbnail 600x600^ -gravity center -extent 600x600 square.png
+
 	im.convert([filein, "-resize", "200x200", "-colorspace", "Gray", "-ordered-dither", "o3x3", "-transparent", "white",  fileout],
 	function(err, stdout) {
 		if (err) throw err
