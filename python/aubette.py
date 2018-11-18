@@ -11,6 +11,11 @@ from threading import Timer
 
 
 
+newpath = r'images/' 
+if not os.path.exists(newpath):
+    os.makedirs(newpath)
+
+
 
 
 def instaScrap():
