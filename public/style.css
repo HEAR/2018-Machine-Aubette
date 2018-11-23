@@ -10,7 +10,7 @@ html{
 }
 
 body{
-	/*background: repeating-linear-gradient(
+/*	background: repeating-linear-gradient(
 		rgba(0, 0, 255, 0),
 		rgba(0, 0, 255, 0) 0.9cm,
 		rgba(0, 0, 255, 0.5) 1cm,
@@ -94,25 +94,21 @@ body{
 	transform-origin: top left;
 } 
 
+
+img{
+	position: absolute;
+	display: block;
+	transform-origin: center center;
+}
+/*
 #img1{
 	position: absolute;
-	top: 9.5cm;
-	left: 10cm;
-	transform: rotate(-45deg);
-	transform-origin: top left;
-	width: 14.85cm;
-	height: 14.85cm;
+	display: block;
+	transform-origin: center center;
 }
 
 #img2{
 	position:absolute;
-	top : 5cm;
-	left : 5cm;
-	width:50px;
-	height:auto;
-	transform: rotate(45deg);
-	transform-origin: top left ; 
-	width: 14.85cm; 
-	height: 14.85cm; 
-
-}
+	display: block;
+	transform-origin: center center ; 
+}*/

@@ -15,6 +15,7 @@
 
 		<img src="" id="img1">  
 		<img src="" id="img2">
+		<img src="" id="img3">
 
 		<div id="texte1"></div>
 		<div id="texte2"></div>
@@ -45,9 +46,22 @@
 
 			$("#img1").attr("src", "images/"+params.image1 );
 			$("#img2").attr("src", "images/"+params.image2 );
+			$("#img3").attr("src", "images/"+params.image3 );
+
+
 
 			placementImage("#img1");
 			placementImage("#img2");
+			placementImage("#img3");
+
+			var nrbImages = Math.round( Math.random() * 2 ) + 1;
+
+			// $("img").css("display", "none");
+			
+			// for(var i = 1 ; i <= nbrImages ; i++){
+			// 	$("#img"+i).css("display", "block");
+			// }
+
 
 
 			placementTexte("#texte1", 0.5, 39);
@@ -89,14 +103,17 @@
 
 		function placementImage(id){
 
-			var largeur = Math.round( Math.random() * (21-7) ) + 7;
+			var diagonale = Math.round( Math.random() * (20-7) ) + 7;
+			largeur = Math.sqrt( diagonale * diagonale / 2 );
 			var angle 	= Math.floor( Math.random() * 4 ) * 90 + 45;
-			var posX  	= Math.round( Math.random() * 18) + 1;
-			var posY	= Math.round( Math.random() * 18) + 1;
+			var posX  	= Math.round( Math.random() * (20 + diagonale) ) - diagonale/2 + (diagonale%2 == 0 ? 0 : -0.5);
+			var posY	= Math.round( Math.random() * (20 + diagonale) ) - diagonale/2 + (diagonale%2 == 0 ? 0 : -0.5);
 
 			$(id)
 			.width(largeur + "cm")
 			.height(largeur + "cm")
+			.css("margin-left", -largeur/2+ "cm")
+			.css("margin-top", -largeur/2+ "cm")
 			.css("transform", "rotate("+angle+"deg)")
 			.css("top", posX + "cm")
 			.css("left", posY + "cm");
@@ -105,7 +122,7 @@
 
 		function placementTexte(id, min, max){
 
-			var largeur = Math.round( Math.random() * (21-7) ) + 7;
+			var largeur = Math.round( Math.random() * (20-7) ) + 7;
 			var angle 	= Math.floor( Math.random() * 4 ) * 90 + 45;
 			var posX  	= Math.round( Math.random() * 18) + 1;
 			var posY	= Math.round( Math.random() * 18) + 1;
