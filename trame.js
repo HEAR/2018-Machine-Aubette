@@ -163,5 +163,5 @@ app.listen(port, function(){
 
 refreshText();
 
-var timerPdf = setInterval(tramerImage, 10000)
-var timerTxt = setInterval(refreshText, 20000)
+// var timerPdf = setInterval(tramerImage, 20000)
+// var timerTxt = setInterval(refreshText, 20000)

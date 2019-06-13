@@ -21,8 +21,8 @@ if not os.path.exists(newpath):
 def instaScrap():
 	url = 'https://www.instagram.com/explore/tags/lanuitdelaubette/'
 
-	screenW = 1280
-	screenH = 800
+	screenW = 1920
+	screenH = 1080
 
 	driver = webdriver.Firefox()
 	driver.set_window_size(screenW/2, screenH/2)
@@ -32,12 +32,12 @@ def instaScrap():
 	soup = BeautifulSoup(driver.page_source,features="html.parser")
 
 
-	print(" ___  ___ _ __ __ _ _ __  ")
-	print("/ __|/ __| '__/ _` | '_ \ ")
-	print("\__ \ (__| | | (_| | |_) |")
-	print("|___/\___|_|  \__,_| .__/ ")
-	print("                   | |    ")
-	print("                   |_|    ")
+	print("\t\t ___  ___ _ __ __ _ _ __  ")
+	print("\t\t/ __|/ __| '__/ _` | '_ \ ")
+	print("\t\t\__ \ (__| | | (_| | |_) |")
+	print("\t\t|___/\___|_|  \__,_| .__/ ")
+	print("\t\t                   | |    ")
+	print("\t\t                   |_|    ")
 
 
 	num = 0
